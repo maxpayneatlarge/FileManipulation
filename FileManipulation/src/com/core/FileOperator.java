@@ -18,8 +18,7 @@ public class FileOperator {
         try {
             FileReader fr = new FileReader(file);
             br = new BufferedReader(fr);
-            String aLine = null;
-            while ((aLine = br.readLine()) != null) {
+            while ((br.readLine()) != null) {
                 numberOfLines++;
             }
         } catch (Exception e) {
