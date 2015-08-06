@@ -15,13 +15,13 @@ public class FileManipulationApp {
     public static void main(String[] args) {
         FileManipulationProperties fmp = new FileManipulationProperties();
         File newFile = new File(fmp.getProp().getProperty("filelocation"));
-        FileOperator fo = new FileOperator();
+        FileOperator fo = new FileOperator(newFile);
         BufferedReader textReader = null;
         try {
             
             FileReader reader = new FileReader(newFile);
             textReader = new BufferedReader(reader);
-            int numberOfLines = fo.countLines(newFile);
+            int numberOfLines = fo.countLines();
 
             String[] textData = new String[numberOfLines];
             for (int i = 0; i < numberOfLines; i++) {

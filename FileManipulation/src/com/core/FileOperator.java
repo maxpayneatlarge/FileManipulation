@@ -6,11 +6,17 @@ import java.io.FileReader;
 
 public class FileOperator {
     
-    public int countLines(File passedInFile) {
+    File file;
+    
+    public FileOperator(File passedInFile){
+        this.file = passedInFile;
+    }
+    
+    public int countLines() {
         int numberOfLines = 0;
         BufferedReader br = null;
         try {
-            FileReader fr = new FileReader(passedInFile);
+            FileReader fr = new FileReader(file);
             br = new BufferedReader(fr);
             String aLine = null;
             while ((aLine = br.readLine()) != null) {
