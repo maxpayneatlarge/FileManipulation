@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.StringTokenizer;
 
 public class FileManipulationApp {
     
@@ -44,6 +45,12 @@ public class FileManipulationApp {
             for (int i = 0; i < numberOfLines; i++) {
                 textData[i] = textReader.readLine();
                 System.out.println(textData[i]);
+                if(i==0){
+                    StringTokenizer tokens = new StringTokenizer(textData[i]);
+                    while(tokens.hasMoreTokens()){
+                        System.out.println(tokens.nextToken());
+                    }
+                }
             }
         }catch(Exception x){
             //TODO
